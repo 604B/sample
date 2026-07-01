@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* コンテナ設定 */
+.container {
+    width: 80%;
+    margin: 4rem auto;
+}
+/* ボタン関係 */
+[class*="button"] {
+    width: 12rem;
+}
+
+/* テキスト関係 */
+[class*="text"] {
+    margin: 0;
+}
+
+/* ポップアップ関係 */
+[popover] {
+    width: 16rem;
+    text-align: center;
+}
+
+/* id="pop1" popover="manual" */
+#pop1[popover="manual"] {
+    position: relative;
+    left: -18rem;
+}
+
+/* id="pop2" popover="manual" */
+#pop2[popover="manual"] {
+    position: relative;
+    left: 18rem;
+}
+
+#pop-parent {
+    anchor-name: --parent-popover;
+}
+
+#pop-child[popover="hint"] {
+    margin: 0;
+    position: absolute;
+    position-anchor: --parent-popover;
+    top: anchor(bottom);
+    left: anchor(right);
+}

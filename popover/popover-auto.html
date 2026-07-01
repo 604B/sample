@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/basic.css" />
+        <title>popover-auto sample</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="popover">
+                <!-- 基本　popover="auto" -->
+                <button popovertarget="pop1" class="popover__button-auto">ポップ１を表示</button>
+                <div id="pop1" popover>
+                    <p class="popover__text">ポップオーバー１</p>
+                </div>
+                <button popovertarget="pop2" class="popover__button-auto">ポップ２を表示</button>
+                <div id="pop2" popover>
+                    <p class="popover__text">ポップオーバー２</p>
+                </div>
+            </div>
+            <section class="explanation">
+                <h2 class="explanation_title">popover="autoの特徴"</h2>
+                <ul class="explanation__list">
+                    <li class="explanation__item">枠外クリックで閉じる</li>
+                    <li class="explanation__item">Escキーで閉じる</li>
+                    <li class="explanation__item">同時に複数表示できない</li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>

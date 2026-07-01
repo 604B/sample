@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/basic.css" />
+        <title>tooltip sample</title>
+    </head>
+    <body>
+        <nav class="nav">
+            <ul class="nav__list" role="list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link" popovertarget="tooltip-home">Home</a>
+                    <div id="tooltip-home" class="nav__tooltip" popover="hint">
+                        ホームへのリンクです
+                    </div>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link" popovertarget="tooltip-about">About</a>
+                    <div id="tooltip-about" class="nav__tooltip" popover="hint">
+                        概要ページへのリンクです
+                    </div>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link" popovertarget="tooltip-item">Item</a>
+                    <div id="tooltip-item" class="nav__tooltip" popover="hint">
+                        商品ページへのリンクです
+                    </div>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link" popovertarget="tooltip-access">Access</a>
+                    <div id="tooltip-access" class="nav__tooltip" popover="hint">
+                        当店へのアクセスについてのリンクです
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <script src="js/tooltip.js"></script>
+    </body>
+</html>

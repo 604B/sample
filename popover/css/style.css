@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* 画像ギャラリー設定 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+
+    .gallery__figure {
+        margin: 0;
+    }
+
+    .gallery__image {
+        object-fit: cover;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* 画像と隠れているボタンのコンテナ */
+    .gallery__image-container {
+        position: relative;
+
+        /* 画像拡大ボタン */
+        .gallery__button {
+            display: none;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        &:hover .gallery__button {
+            display: block;
+        }
+    }
+
+    .gallery__caption {
+        text-align: center;
+    }
+}
+
+/* ポッポアップの設定 */
+.gallery-popup {
+    width: 50%;
+    margin: 2rem auto;
+    border-radius: 10px;
+
+    .gallery-popup__text {
+        margin: 0;
+    }
+}
+
+[popover]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+}

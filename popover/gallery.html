@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>popover sample</title>
+    </head>
+    <body>
+        <main role="main">
+            <div class="gallery">
+                <!-- 画像１ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo1.webp" alt="画像１" class="gallery__image" />
+                        <button popovertarget="pop1" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像１</figcaption>
+                </figure>
+                <!-- 画像２ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo2.webp" alt="画像２" class="gallery__image" />
+                        <button popovertarget="pop2" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像２</figcaption>
+                </figure>
+                <!-- 画像３ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo3.webp" alt="画像３" class="gallery__image" />
+                        <button popovertarget="pop3" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像３</figcaption>
+                </figure>
+                <!-- 画像４ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo4.webp" alt="画像４" class="gallery__image" />
+                        <button popovertarget="pop4" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像４</figcaption>
+                </figure>
+                <!-- 画像５ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo5.webp" alt="画像５" class="gallery__image" />
+                        <button popovertarget="pop5" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像５</figcaption>
+                </figure>
+                <!-- 画像６ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo6.webp" alt="画像６" class="gallery__image" />
+                        <button popovertarget="pop6" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像６</figcaption>
+                </figure>
+                <!-- 画像７ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo7.webp" alt="画像７" class="gallery__image" />
+                        <button popovertarget="pop7" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像７</figcaption>
+                </figure>
+                <!-- 画像８ -->
+                <figure class="gallery__figure">
+                    <div class="gallery__image-container">
+                        <img src="images/photo8.webp" alt="画像８" class="gallery__image" />
+                        <button popovertarget="pop8" class="gallery__button">拡大表示</button>
+                    </div>
+                    <figcaption class="gallery__caption">画像８</figcaption>
+                </figure>
+            </div>
+            <!-- ポッポアップ１ -->
+            <figure id="pop1" class="gallery-popup" popover>
+                <img src="images/photo1.webp" alt="画像１" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ２ -->
+            <figure id="pop2" class="gallery-popup" popover>
+                <img src="images/photo2.webp" alt="画像２" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ３ -->
+            <figure id="pop3" class="gallery-popup" popover>
+                <img src="images/photo3.webp" alt="画像３" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ４ -->
+            <figure id="pop4" class="gallery-popup" popover>
+                <img src="images/photo4.webp" alt="画像４" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ５ -->
+            <figure id="pop5" class="gallery-popup" popover>
+                <img src="images/photo5.webp" alt="画像５" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ６ -->
+            <figure id="pop6" class="gallery-popup" popover>
+                <img src="images/photo6.webp" alt="画像６" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ７ -->
+            <figure id="pop7" class="gallery-popup" popover>
+                <img src="images/photo7.webp" alt="画像７" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+            <!-- ポッポアップ８ -->
+            <figure id="pop8" class="gallery-popup" popover>
+                <img src="images/photo8.webp" alt="画像８" class="gallery-popup__image" />
+                <p class="gallery-popup__text">説明文</p>
+            </figure>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* 全体コンテナ設定 */
+.container {
+    margin: 1rem;
+}
+
+/* ポップオーバーのスタイルのリセット */
+[popover] {
+    margin: 0;
+    inset: 0;
+    border: none;
+}
+
+/* ハンバーガー設定 */
+.hamburger__button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+
+    @media screen and (width >=768px) {
+        display: none; /* 表示を消す */
+    }
+}
+
+/* 表示されるメニュー */
+.hamburger__nav {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    background: #cde0f5;
+    /* 離散的アニメーション設定 フェードイン・アウト */
+    transition:
+        opacity 0.6s,
+        overlay 0.6s allow-discrete,
+        display 0.6s allow-discrete;
+
+    @media screen and(width>=768px) {
+        display: none;
+    }
+
+    &:popover-open {
+        display: block;
+        opacity: 1;
+        @starting-style {
+            opacity: 0;
+        }
+    }
+
+    .hamburger__list {
+        padding: 0;
+    }
+
+    .hamburger__item {
+        margin-inline: 1rem;
+        position: relative;
+    }
+
+    .hamburger__link {
+        display: block;
+        width: max-content;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        transition: color 0.3s; /* ホバーアニメーション設定 */
+
+        @media screen and (width >=768px) {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            color: #f5461a;
+        }
+    }
+
+    /* ハンバーガーのツールチップ設定 */
+    .hamburger__tooltip {
+        position: absolute;
+        width: max-content;
+        inset: auto;
+        margin-left: 1rem;
+        font-size: 0.8rem;
+        text-align: center;
+        color: white;
+        background-color: #007bff;
+        padding: 0.5rem;
+        border-radius: 10px;
+        align-self: anchor-center; /* 上下中央揃え */
+        left: anchor(right);
+    }
+    /* アンカー設定 */
+    [popovertarget="hamburger-home"] {
+        anchor-name: --hamburger-home;
+    }
+    [popovertarget="hamburger-about"] {
+        anchor-name: --hamburger-about;
+    }
+    [popovertarget="hamburger-service"] {
+        anchor-name: --hamburger-service;
+    }
+    [popovertarget="hamburger-contact"] {
+        anchor-name: --hamburger-contact;
+    }
+    /* ツールチップとアンカーの紐づけ */
+    #hamburger-home {
+        position-anchor: --hamburger-home;
+    }
+    #hamburger-about {
+        position-anchor: --hamburger-about;
+    }
+    #hamburger-service {
+        position-anchor: --hamburger-service;
+    }
+    #hamburger-contact {
+        position-anchor: --hamburger-contact;
+    }
+}
+
+/* ヘッダー設定 */
+.header {
+    .header__nav {
+        display: none;
+        @media screen and (width >=768px) {
+            display: block;
+        }
+    }
+    .header__list {
+        padding: 0;
+        display: flex;
+    }
+
+    .header__item {
+        margin-inline: 1rem;
+        flex: 1 1 auto;
+    }
+
+    .header__link {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        text-align: center;
+        font-size: 1.2rem;
+        transition: color 0.3s; /* ホバーアニメーション設定 */
+
+        @media screen and (width >=768px) {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    /* ヘッダーのツールチップ設定 */
+    .header__tooltip {
+        position: absolute;
+        width: max-content;
+        inset: auto;
+        font-size: 0.8rem;
+        text-align: center;
+        color: white;
+        background-color: #007bff;
+        padding: 0.5rem;
+        border-radius: 10px;
+        top: anchor(bottom);
+        justify-self: anchor-center; /* 左右中央揃え */
+    }
+    /* アンカー設定 */
+    [popovertarget="nav-home"] {
+        anchor-name: --nav-home;
+    }
+    [popovertarget="nav-about"] {
+        anchor-name: --nav-about;
+    }
+    [popovertarget="nav-service"] {
+        anchor-name: --nav-service;
+    }
+    [popovertarget="nav-contact"] {
+        anchor-name: --nav-contact;
+    }
+    /* ツールチップとアンカーの紐づけ */
+    #nav-home {
+        position-anchor: --nav-home;
+    }
+    #nav-about {
+        position-anchor: --nav-about;
+    }
+    #nav-service {
+        position-anchor: --nav-service;
+    }
+    #nav-contact {
+        position-anchor: --nav-contact;
+    }
+}

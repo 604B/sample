@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/basic.css" />
+        <title>popover-nest sample</title>
+    </head>
+    <body>
+        <!-- 親となる popover="auto" -->
+        <button popovertarget="pop-parent">メニューを開く</button>
+
+        <div id="pop-parent" popover="auto">
+            <p>メインのメニュー内容です。</p>
+
+            <!-- 子となる popover="hint" -->
+            <button popovertarget="pop-child">ヒントを表示</button>
+            <div id="pop-child" popover="hint">
+                <p>これは補足説明のヒントです。</p>
+            </div>
+        </div>
+    </body>
+</html>

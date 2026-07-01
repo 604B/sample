@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* リスト設定 */
+.nav {
+    width: 80%;
+    margin-block: 4rem;
+    margin-inline: auto;
+
+    .nav__list {
+        display: flex;
+        padding: 0;
+
+        .nav__item {
+            flex: 1 1 auto;
+        }
+
+        .nav__link {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+
+/* ポップオーバーCSSリセット ＆ デザイン*/
+[popover] {
+    margin: 0;
+    inset: auto;
+    border: none;
+    position: absolute;
+    width: max-content;
+    font-size: 0.8rem;
+    color: azure;
+    background-color: #9090e9;
+    border-radius: 10px;
+    bottom: anchor(top);
+    justify-self: anchor-center;
+}
+
+/* アンカー設定 */
+[popovertarget="tooltip-home"] {
+    anchor-name: --tooltip-home;
+}
+[popovertarget="tooltip-about"] {
+    anchor-name: --tooltip-about;
+}
+[popovertarget="tooltip-item"] {
+    anchor-name: --tooltip-item;
+}
+[popovertarget="tooltip-access"] {
+    anchor-name: --tooltip-access;
+}
+
+#tooltip-home {
+    position-anchor: --tooltip-home;
+}
+#tooltip-about {
+    position-anchor: --tooltip-about;
+}
+#tooltip-item {
+    position-anchor: --tooltip-item;
+}
+#tooltip-access {
+    position-anchor: --tooltip-access;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/basic.css" />
+        <title>popover manual sample</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="popover">
+                <div class="pop1-btn">
+                    <button popovertarget="pop1" class="popover__button-manual-togle">
+                        ポップ１を切り替える
+                    </button>
+                    <button
+                        popovertarget="pop1"
+                        popovertargetaction="show"
+                        class="popover__button-manual-show"
+                    >
+                        ポップ１を表示する
+                    </button>
+                    <button
+                        popovertarget="pop1"
+                        popovertargetaction="hide"
+                        class="popover__button-manual-hide"
+                    >
+                        ポップ１を閉じる
+                    </button>
+                </div>
+                <div class="pop2-btn">
+                    <button popovertarget="pop2" class="popover__button-manual-togle">
+                        ポップ２を切り替える
+                    </button>
+                    <button
+                        popovertarget="pop2"
+                        popovertargetaction="show"
+                        class="popover__button-manual-show"
+                    >
+                        ポップ２を表示する
+                    </button>
+                    <button
+                        popovertarget="pop2"
+                        popovertargetaction="hide"
+                        class="popover__button-manual-hide"
+                    >
+                        ポップ２を閉じる
+                    </button>
+                </div>
+                <div id="pop1" popover="manual">
+                    <p class="popover__text">ポップオーバー１</p>
+                </div>
+                <div id="pop2" popover="manual">
+                    <p class="popover__text">ポップオーバー２</p>
+                </div>
+            </div>
+            <section class="explanation">
+                <h2 class="explanation_title">popover="manualの特徴"</h2>
+                <ul class="explanation__list">
+                    <li class="explanation__item">枠外クリックで閉じない</li>
+                    <li class="explanation__item">Escキーで閉じない</li>
+                    <li class="explanation__item">同時に複数表示できる</li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>
