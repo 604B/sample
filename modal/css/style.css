@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/* コンテナ設定 */
+.container {
+    width: 80%;
+    margin: 2rem auto;
+    /* 入力フォームと確認ダイアログの設定 */
+    .form,
+    .confirm__form {
+        display: grid;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* キャンセルボタンの設定 */
+    #cancel-button {
+        width: 100%;
+    }
+}
+
+/* トースト関連の設定 */
+#toast {
+    display: none;
+    opacity: 0;
+    margin: 0;
+    inset: auto;
+    position: fixed;
+    border: none;
+    bottom: 10px;
+    right: 30px;
+    border-left: 4px solid blue;
+    transition:
+        opacity 1s,
+        overlay 1s allow-discrete,
+        display 1s allow-discrete;
+
+    &:popover-open {
+        display: block;
+        opacity: 1;
+        @starting-style {
+            opacity: 0;
+        }
+    }
+}

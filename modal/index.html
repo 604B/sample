@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>modal sample</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="#" class="form" onsubmit="return false;">
+                <label for="name" class="form__label">ニックネーム</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form__input"
+                    required
+                    placeholder="ニックネームを入力してください"
+                />
+                <label for="comments" class="form__label">コメント</label>
+                <textarea
+                    name="comments"
+                    id="comments"
+                    class="form__textarea"
+                    placeholder="コメントを入力して下さい"
+                ></textarea>
+            </form>
+            <button command="show-modal" commandfor="modal" id="confirm-button">確認する</button>
+            <dialog id="modal" class="confirm">
+                <form action="#" method="post" class="confirm__form" onsubmit="return false;">
+                    <label for="name" class="form__label">ニックネーム</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="confirm-name"
+                        class="form__input"
+                        required
+                        disabled
+                    />
+                    <label for="comments" class="form__label">コメント</label>
+                    <textarea
+                        name="comments"
+                        id="confirm-comments"
+                        class="form__textarea"
+                        disabled
+                    ></textarea>
+                    <button type="submit" popovertarget="toast" id="submit-button">登録する</button>
+                </form>
+                <button command="request-close" commandfor="modal" id="cancel-button">
+                    入力に戻る
+                </button>
+            </dialog>
+        </div>
+        <div id="toast" popover="manual">登録しました</div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
