@@ -17,5 +17,5 @@ const swiper = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev",
     },
     // アニメーション
-    effect: "cube",
+    effect: "fade",
 });
