@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+:root {
+    /* 初期値としてライト・ダーク両方に対応 */
+    color-scheme: light dark;
+
+    /* light-dark(ライト用の色, ダーク用の色) */
+    --bg-color: light-dark(#ffffff, #121212);
+    --text-color: light-dark(#333333, #f5f5f5);
+}
+
+/* JavaScriptで強制指定された場合のスタイル */
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition:
+        background-color 0.3s,
+        color 0.3s; /* 滑らかに切り替える */
+    font-family: sans-serif;
+    padding: 2rem;
+}

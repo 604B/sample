@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.post {
+    /* コンテナクエリに設定（基準となるコンテナ） */
+    container-type: inline-size;
+    container-name: card-container;
+    .card__title {
+        font-size: 1.5rem;
+        /* コンテナクエリが600PXより広がれば */
+        @container card-container (width >= 600px) {
+            font-size: clamp(1.5rem, -0.75rem + 6vw, 3rem);
+        }
+    }
+}
