@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* アコーディオン */
+.accordion {
+    .accordion__title {
+        margin-bottom: 1rem;
+    }
+    /* 概要 */
+    .accordion__summary {
+        /* 初期値の display: list-item 以外を指定すると、デフォルトの三角形アイコンは非表示になる */
+        display: grid;
+        grid-template-columns: 1fr 24px;
+        gap: 6px;
+        align-items: center;
+        cursor: pointer;
+        padding: 1rem 1.5rem;
+        border: 1px solid #d2beff;
+        font-weight: bold;
+        color: #002255;
+        /* Safari 18.4未満対応 */
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    /* アイコン*/
+    .accordion__icon {
+        display: block;
+        width: 24px;
+        transform-origin: center center; /* 変形の基準位置を決定　X軸：中央　Y軸：中央*/
+        transition: transform 0.4s;
+    }
+
+    /* 説明文 */
+    .accordion__text {
+        margin-block: 1rem;
+        padding-left: 2rem;
+    }
+
+    /* 説明リスト */
+    .accordion__list {
+        padding-left: 2rem;
+    }
+
+    /* 説明リストのリンク */
+    .accordion__link {
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* アコーディオンが開いた時のスタイル */
+    .accordion__details[open] .accordion__icon {
+        transform: rotate(180deg);
+    }
+}

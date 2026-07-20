@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Material Symbols and Icons link -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down"
+        />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>accordion sample</title>
+    </head>
+    <body>
+        <main>
+            <section class="accordion">
+                <h2 class="accordion__title">アコーディオン</h2>
+                <!-- 基本 -->
+                <details class="accordion__details">
+                    <summary class="accordion__summary">
+                        概要<span class="material-symbols-outlined accordion__icon">
+                            keyboard_arrow_down
+                        </span>
+                    </summary>
+                    <p class="accordion__text">概要の説明</p>
+                </details>
+                <!-- name属性でグループ化できる -->
+                <details name="group1" class="accordion__details">
+                    <summary class="accordion__summary">
+                        麺類<span class="material-symbols-outlined accordion__icon">
+                            keyboard_arrow_down
+                        </span>
+                    </summary>
+                    <ul class="accordion__list" role="list">
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">ラーメン</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">そば</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">うどん</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">焼きそば</a>
+                        </li>
+                    </ul>
+                </details>
+                <details name="group1" class="accordion__details">
+                    <summary class="accordion__summary">
+                        丼物<span class="material-symbols-outlined accordion__icon">
+                            keyboard_arrow_down
+                        </span>
+                    </summary>
+                    <ul class="accordion__list" role="list">
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">牛丼</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">天丼</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">親子丼</a>
+                        </li>
+                        <li class="accordion__item">
+                            <a href="" class="accordion__link">カツ丼</a>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+        </main>
+    </body>
+</html>
