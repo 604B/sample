@@ -1,41 +1,52 @@
 @charset "UTF-8";
 
-/* css/view.css */
 body {
-    height: 400vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    height: 300vh;
 }
 
+/* スクロールさせるためのダミー要素 */
 .dummy {
-    height: 250vh;
+    height: 100vh;
 }
 
 .figure {
-    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
 }
 
 .figure__image {
-    /* スクロール連動アニメーションの設定 */
-    animation-name: expand-circle-mask;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    /* スクロール駆動アニメーションの設定 */
+    animation: mask-transform linear both;
+
+    /* View Timeline を指定 */
     animation-timeline: view();
-    /* 要素の上端が画面下に入った瞬間(entry 0%)から、要素が上下中央に来るまで(block 50%) */
-    animation-range: entry 0% block 50%;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
+
+    /* アニメーションの適用範囲（タイムラインの開始と終了）*/
+    animation-range: contain 0% cover 50%;
 }
 
-/* 300pxの円形（半径150px）から画像全体を覆う大きさまでマスクを拡大するアニメーション */
-@keyframes expand-circle-mask {
+/* キーフレームの設定（円 → 角丸四角形 → 正方形） */
+@keyframes mask-transform {
+    /* 開始（完全に入った時）：完全な円 */
     0% {
-        -webkit-mask-image: radial-gradient(
-            circle at center,
-            #000 0%,
-            #000 150px,
-            transparent 151px
-        );
-        mask-image: radial-gradient(circle at center, #000 0%, #000 150px, transparent 151px);
+        clip-path: inset(0% round 50%);
     }
+
+    /* 過程（中間地点）：角丸四角形 */
+    50% {
+        clip-path: inset(0% round 15%);
+    }
+
+    /* 終了（画面の中央）：正方形（角丸なし） */
     100% {
-        -webkit-mask-image: radial-gradient(circle at center, #000 0%, #000 100%, transparent 100%);
-        mask-image: radial-gradient(circle at center, #000 0%, #000 100%, transparent 100%);
+        clip-path: inset(0% round 0%);
     }
 }
