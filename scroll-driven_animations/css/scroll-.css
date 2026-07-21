@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* 1. スクロール率と連動させるカスタムプロパティを定義 */
+@property --fill {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+body {
+    /* スクロール量を確保 */
+    height: 300vh;
+    margin: 0;
+    background-color: #f4f6f8;
+}
+
+.drop-shaped {
+    position: fixed;
+    width: 30vmin;
+    height: 30vmin;
+
+    /* しずく型の定義 */
+    border-radius: 0% 100% 50% 50% / 0% 50% 50% 100%;
+    transform: translate(-50%, -50%) rotate(45deg) skew(10deg, 10deg);
+
+    /* アウトライン（枠線）を描画 */
+    border: 2px solid #0052cc;
+
+    /* 立体感を出すためのシャドウ */
+    box-shadow: 0 10px 25px rgba(0, 82, 204, 0.15);
+
+    /* 2. 水が溜まるグラデーション表現*/
+    background: linear-gradient(
+        to top left,
+        #0052cc 0%,
+        #0066ff var(--fill),
+        #38b6ff calc(var(--fill) + 2%),
+        rgba(235, 243, 255, 0.6) calc(var(--fill) + 2%),
+        rgba(235, 243, 255, 0.6) 100%
+    );
+
+    /* 3. スクロール駆動アニメーションの設定 */
+    animation-name: fillWater;
+    animation-timeline: scroll(block nearest);
+    animation-timing-function: linear;
+}
+
+/* 4. アニメーションキーフレーム（--fill の値を0%から100%へ） */
+@keyframes fillWater {
+    from {
+        --fill: 0%;
+    }
+    to {
+        --fill: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* css/view.css */
+body {
+    height: 400vh;
+}
+
+.dummy {
+    height: 250vh;
+}
+
+.figure {
+    text-align: center;
+}
+
+.figure__image {
+    /* スクロール連動アニメーションの設定 */
+    animation-name: expand-circle-mask;
+    animation-timeline: view();
+    /* 要素の上端が画面下に入った瞬間(entry 0%)から、要素が上下中央に来るまで(block 50%) */
+    animation-range: entry 0% block 50%;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+/* 300pxの円形（半径150px）から画像全体を覆う大きさまでマスクを拡大するアニメーション */
+@keyframes expand-circle-mask {
+    0% {
+        -webkit-mask-image: radial-gradient(
+            circle at center,
+            #000 0%,
+            #000 150px,
+            transparent 151px
+        );
+        mask-image: radial-gradient(circle at center, #000 0%, #000 150px, transparent 151px);
+    }
+    100% {
+        -webkit-mask-image: radial-gradient(circle at center, #000 0%, #000 100%, transparent 100%);
+        mask-image: radial-gradient(circle at center, #000 0%, #000 100%, transparent 100%);
+    }
+}
