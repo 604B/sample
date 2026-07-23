@@ -1,14 +1,37 @@
 @charset "UTF-8";
 
-.post {
-    /* コンテナクエリに設定（基準となるコンテナ） */
-    container-type: inline-size;
-    container-name: card-container;
-    .card__title {
-        font-size: 1.5rem;
-        /* コンテナクエリが600PXより広がれば */
-        @container card-container (width >= 600px) {
-            font-size: clamp(1.5rem, -0.75rem + 6vw, 3rem);
+.container {
+    display: block;
+    margin-inline: clamp(1rem, 2.6667vw, 2rem);
+    @media screen and (width>=768px) {
+        display: grid;
+        grid-template-columns: 70vi 30vi;
+        gap: 1rem;
+    }
+    .main {
+        /* コンテナクエリに設定（基準となるコンテナ） */
+        container-type: inline-size;
+        container-name: main;
+    }
+    .card-container {
+        display: block;
+        /* コンテナクエリが1000pxより広がれば */
+        @container main (width >= 1000px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
+    }
+    .card__title {
+        padding-inline: clamp(1rem, 2.6667vw, 2rem);
+        padding-block: clamp(0.5rem, 1.3333vw, 1rem);
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        color: hsl(20, 14%, 96%);
+        background-color: hsl(240, 83%, 70%);
+        border-radius: 20px;
+    }
+    .card__text {
+        font-size: clamp(1rem, 2.6667vw, 2rem);
+        padding-inline: clamp(1rem, 2.6667vw, 2rem);
     }
 }

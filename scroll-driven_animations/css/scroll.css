@@ -43,7 +43,7 @@ body {
 
     /* 3. スクロール駆動アニメーションの設定 */
     animation-name: fillWater;
-    animation-timeline: scroll(block nearest);
+    animation-timeline: scroll();
     animation-timing-function: linear;
 }
 
