@@ -1,0 +1,49 @@
+/* ==============================================
+   スライドイン・スライドアウト ページ遷移アニメーション
+   ============================================== */
+
+/* アニメーションのキーフレーム定義 */
+
+/* 新しいページ：右からスライドイン */
+@keyframes slide-in-from-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 古いページ：左へスライドアウト */
+@keyframes slide-out-to-left {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+}
+
+/* ルート（画面全体）に対してスライドキーフレームを適用 */
+::view-transition-old(root) {
+    animation: 0.4s cubic-bezier(0.25, 1, 0.5, 1) both slide-out-to-left;
+}
+
+::view-transition-new(root) {
+    animation: 0.4s cubic-bezier(0.25, 1, 0.5, 1) both slide-in-from-right;
+}
+
+/* 
+ * 画像要素（product-image-1, product-image-2）の個別トランジションが
+ * スライドと干渉する場合は、全体の整合性を保つため以下のように時間を合わせるか、
+ * 画像の個別アニメーションを保持させます。
+ */
+::view-transition-group(product-image-1),
+::view-transition-group(product-image-2) {
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
